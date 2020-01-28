@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>DBA Oracle</title>
+    <title>Luan's Base</title>
     <meta charset="utf-8">
 </head>
 
@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">OracleDBA</a>
+                    <a class="navbar-brand" href="#"> - </a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -47,16 +47,20 @@
             </li>
             <li><a href="#2a" data-toggle="tab">Oracle</a>
             </li>
+            <li><a href="#3a" data-toggle="tab">dotNet</a>
+            </li>
         </ul>
 
         <div class="tab-content clearfix">
+            <!--Tab 1 fim-->
             <div class="tab-pane active" id="1a">
+                <!--Open Alert AIX Inicio-->
                 <div class="row">
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1">Open alert AIX</a>
+                                    <a data-toggle="collapse" href="#collapse1">Abrir alert AIX</a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
@@ -75,7 +79,98 @@
                         </div>
                     </div>
                 </div>
+                <!--Open Alert AIX Fim-->
+
+                <!--Comandos Inicio-->
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse4">Comandos</a>
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li style="color:red">ps -ef | grep pmon (lista processos da maquina)</li>
+                                        <li>. oraenv nomeInstancia (seta váriavel de ambiente)</li>
+                                        <li>sqlplus / as sysdba</li>
+                                        <li> set -o vi (Evitar problemas ao pressionar direcionais e setas) </li>
+                                        <li> dbca (database creator assistent) </li>
+                                        <li> clear (Limpa tela) </li>
+                                        <li> pwd (diretorio atual) </li>
+                                        <li> ls (Lista diretorio) </li>
+                                        <li> cd /u01 (entrar no diretorio u01) </li>
+                                        <li> df -m (mostra os filesystems em mb) </li>
+                                        <li> df -g (mostra os filesystems em gb) </li>
+                                        <li> cd ~ (Volta para home do usuário) </li>
+                                        <li> cd .. (Volta para um diretorio anterior ao atual) </li>
+                                        <li> ls -lrt (Lista diretorio ordenação crescente) </li>
+                                        <li> ls -lt (Lista diretorio ordenação desc) </li>
+                                        <li> ls | wc -l (lista quantidade dentro do diretorio) </li>
+                                        <li> ls -l | wc -l (lista quantidade dentro do diretorio contando com o
+                                            diretório atual) </li>
+                                        <li> du -g -s * (pegar o tamanho das pastas) </li>
+                                        <li> du -g -s * | sort (pegar o tamanho das pastas com ordenacao) </li>
+                                        <li> echo (exibir valores) </li>
+                                        <li> date </li>
+                                        <li> echo :1 > teste.txt </li>
+                                        <li> su -u (moda usuário) </li>
+                                        <li> touch nomearquivo.txt para criar um arquivo vazio </li>
+                                        <li> cp (cópia)</li>
+                                        <li> mv (move)</li>
+                                        <li> rm date1.txt(renomeia)</li>
+                                        <li> gzip -1 (Compactar o -1 é o nível de compactação. Ele pode ir de 1 a 9)</li>
+                                        <li> gzip -d (Descompactar)</li>
+                                        <li> Smit (Abre o painel de controle no AIX)</li>
+                                        <li>LSPV (Lista Discos Físicos) --> <a href="img/comando_lspv_01.jpg">Exemplo</a></ap></li>
+                                        <li>LSLV (Lista Logical Volumes)</li>
+                                        <li>LSVG (Lista Volumes Group)</li>
+                                        <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
+                                        <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Comandos Fim-->
+
+                <!--Comandos Arquivos Inicio-->
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse5">Comandos arquivos</a>
+                                </h4>
+                            </div>
+                            <div id="collapse5" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li> vi nomearquivo.txt (abre o arquivo) </li>
+                                        <li> :q (- sair) </li>
+                                        <li> :q! (força a saída do arquivo sem gravar) </li>
+                                        <li> i modo inserção) </li>
+                                        <li> x (exclui um caracter) </li>
+                                        <li> dd (apaga a linha inteira) </li>
+                                        <li> w (comando para salvar) </li>                                        
+                                    </ul>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Comandos Arquivos Fim-->
+
+
             </div>
+            <!--Tab 1 fim-->
+
+            <!--Tab 2 inicio-->
             <div class="tab-pane" id="2a">
                 <div class="row">
                     <div class="panel-group">
@@ -102,29 +197,56 @@
                     </div>
                 </div>
             </div>
+            <!--Tab 2 fim-->
+
+            <!--Tab 3 inicio-->
+            <div class="tab-pane" id="3a">
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse3">ClosedXML</a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h3 class="text-center">Como usar a dll ClosedXML - Gerar Excel</h3>
+                                    <ul>
+                                        <li>SHOW PARAMETER DUMP</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Tab 3 fim-->
+
         </div>
     </div>
-    <footer class="page-footer font-small cyan darken-3" style="margin-top: 20%;" >
+    <footer class="page-footer font-small cyan darken-3" style="margin-top: 20%;">
         <div class="container">
             <!-- Grid row-->
             <div class="row" style="margin-bottom: 10px;margin-left: 11px;">
                 <div class="col-xs-12 col-sm-12 col-md-5 col-md-push-5 col-lg-5">
-                    
+
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                     <a class="fb-ic" href="https://facebook.com/luanneres/" target="_blank">
                         <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                     </a>
-                    <a class="li-ic" href="https://www.linkedin.com/in/luan-neres-0258b590/" target="_blank" style="margin-left: 5%;">
+                    <a class="li-ic" href="https://www.linkedin.com/in/luan-neres-0258b590/" target="_blank"
+                        style="margin-left: 5%;">
                         <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                     </a>
-                    <a class="li-ic" href="https://github.com/luanneres/oracledba" target="_blank" style="margin-left: 5%;">
+                    <a class="li-ic" href="https://github.com/luanneres/oracledba" target="_blank"
+                        style="margin-left: 5%;">
                         <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                     </a>
                 </div>
             </div>
-
-
         </div>
         <!-- Footer Elements -->
 
@@ -132,8 +254,6 @@
         <div class="footer-copyright text-center py-3">© 2020 Desenvolvido por Luan Neres
 
         </div>
-
-
     </footer>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
