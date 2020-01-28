@@ -93,9 +93,10 @@
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li style="color:red">ps -ef | grep pmon (lista processos da maquina)</li>
+                                        <li style="color:red">ps -ef | grep pmon (lista processos da maquina)</li>                                        
                                         <li>. oraenv nomeInstancia (seta váriavel de ambiente)</li>
                                         <li>sqlplus / as sysdba</li>
+                                        <li>scp *.rpm oracle@192.168.1.1:/u01/install (copiar do servidor atual para o endereco de ip definido)</li>
                                         <li> set -o vi (Evitar problemas ao pressionar direcionais e setas) </li>
                                         <li> dbca (database creator assistent) </li>
                                         <li> clear (Limpa tela) </li>
@@ -128,7 +129,7 @@
                                         <li>LSLV (Lista Logical Volumes)</li>
                                         <li>LSVG (Lista Volumes Group)</li>
                                         <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
-                                        <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
+                                        <li>chfs -a size=30G (Defini para 30GB o filesystem)</li>
                                     </ul>
                                 </div>
                                 <div class="panel-footer"></div>
@@ -165,13 +166,12 @@
                     </div>
                 </div>
                 <!--Comandos Arquivos Fim-->
-
-
             </div>
             <!--Tab 1 fim-->
 
             <!--Tab 2 inicio-->
             <div class="tab-pane" id="2a">
+                <!--Create user or role Inicio-->
                 <div class="row">
                     <div class="panel-group">
                         <div class="panel panel-default">
@@ -196,6 +196,41 @@
                         </div>
                     </div>
                 </div>
+                <!--Create user or role Fim-->
+
+
+                <!--Create user or role Inicio-->
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse6">DataFile e TableSpace</a>
+                                </h4>
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h5 class="text-center" style="font-weight: bold">Criar TableSpace</h5>
+                                    <ul>
+                                        <li>create tablespace confidencial datafile '/u01/oracle/product/10.2.0/oradata/orcl/confidencial_01.dbf' size 10m</li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Redimensionar DataFile</h5>
+                                    <ul>
+                                        <li>alter database datafile '/u01/oracle/product/10.2.0/oradata/orcl/tbs_quota_01.dbf' resize 200m;</li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Adicionar limites de uso na tablespace por objeto</h5>
+                                    <ul>
+                                        <li>alter user teste quota 100m on tbs_quota; (quota de 100m)</li>
+                                        <li>alter user teste quota unlimited on tbl_unlimited; (quota ilimitada)</li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Create user or role Fim-->
+
             </div>
             <!--Tab 2 fim-->
 
