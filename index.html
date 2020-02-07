@@ -154,9 +154,27 @@
                                         </li>
                                         <li>LSLV (Lista Logical Volumes)</li>
                                         <li>LSVG (Lista Volumes Group)</li>
+                                        <li>cfgmgr - Dar refresh no rack para atualizar os discos</li>
                                         <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
-                                        <li>chfs -a size=30G (Defini para 30GB o filesystem)</li>
+                                        <li>chfs -a size=30G (Defini para 30GB o filesystem)</li> 
+                                        <li>lsnrctl stop - Parar o listener</li> 
+                                        <li>rm -f -rf * (-f para formçar e -rf para fazer recursivamente ) - Apagar diretorio e arquivos</li> 
                                     </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Abrir o XClock</h5>
+                                    <ul>
+                                        <li>Antes de executar este comando abrir o xming. Depois executar os comandos:    
+                                        </li>
+                                        <li>
+                                            export DISPLAY=ip:0.0
+                                        </li>
+                                        <li>
+                                            xhost +
+                                        </li>
+                                        <li>
+                                            xclock
+                                        </li>
+                                    </ul>
+
                                 </div>
                                 <div class="panel-footer"></div>
                             </div>
@@ -185,6 +203,8 @@
                                         <li> x (exclui um caracter) </li>
                                         <li> dd (apaga a linha inteira) </li>
                                         <li> w (comando para salvar) </li>
+                                        <li> :wq (comando para salvar) </li>
+                                        <li><strong>Observação: utilizar ESC + letra correspondente a ação (EX: Para inserir ESC + i)</strong>Observação: </li>
                                     </ul>
                                 </div>
                                 <div class="panel-footer"></div>
@@ -266,6 +286,52 @@
                     </div>
                 </div>
                 <!--Create user or role Fim-->
+
+
+                <!--Export e Import-->
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <i class="fas fa-caret-right" aria-hidden="true"></i>
+                                    <a data-toggle="collapse" href="#collapse9">Export e Import</a>
+                                </h4>
+                            </div>
+                            <div id="collapse9" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h3 style="margin-left: 24px;" class="text-center">Export</h3>
+                                    <ul>                                            
+                                      <li>SELECT * FROM DBA_DIRECTORIES; (Diretórios do banco)</li>
+                                      <li>CREATE DIRECTORY NOME_DIRETORIO AS '/u01/oradata/exports'; (Criar o diretório onde será feito os exports)</li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Export Convencional</h5>
+                                    <ul>
+                                        
+                                        <li><strong>Digitar no AIX:</strong> exp owner=nomeTabela1, nometabela2 file=/u01/oradata/exports/export1.dmp log=/u01/oradata/exports/export1.log</li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">ExpDP</h5>
+                                    <ul>
+                                        <li><strong>Digitar no AIX:</strong> expdp directory=dumpdir dumpfile=expdp02.dmp logfile=log_expdp02.log exclude=statistics,table:\"IN \(\'EMP\',\'BONUS\'\)\"</li>
+                                    </ul>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <strong><p class="text-center" style="color:red"> Ps: O EXPDP é mais rápido. Caso você não defina o diretório, ele pega o diretório padrão da tabela dba_directories</p></strong>
+                                    <br>
+                                    <br>
+                                    <h3 style="margin-left: 24px;" class="text-center">Import</h3>
+                                    <ul>
+                                        <li>imp fromuser=scott touser=scott2  file=/u01/oradata/exports/export1.dmp log=/u01/oradata/exports/imp_scott1.log</li>
+                                    </ul>
+                                    
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Export e Import - FIM-->
 
                 <!--Instalação Oracle 10g-->
                 <div class="row">
