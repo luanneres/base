@@ -213,6 +213,36 @@
                     </div>
                 </div>
                 <!--Comandos Arquivos Fim-->
+
+
+                <!--Comandos SQLPLUS-->
+                <div class="row">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <i class="fas fa-caret-right" aria-hidden="true"></i>
+                                    <a data-toggle="collapse" href="#collapse11">Comandos SQLPLUS</a>
+                                </h4>
+                            </div>
+                            <div id="collapse11" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li> SELECT status FROM V$INSTANCE; (Digitar no sqlplus para verificar o status do banco) </li>
+                                        <li> shutdown immediate (Parar o banco)</li>
+                                        <li> shutdown abort (Mata todas as tarefas do banco, não é recomendado, pois pode gerar perda de dados)</li>
+                                        <li> startup (Inicia o banco) </li>
+                                        <li> startup Mount (Inicia o banco em estado mount. Nesse estado você pode executar o alter database) </li>
+                                        <li> Alter database open (Iniciar o banco quando ele estiver em estado Mount) </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Comandos SQLPLUS Fim-->
+
             </div>
             <!--Tab 1 fim-->
 
