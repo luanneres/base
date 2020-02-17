@@ -144,11 +144,6 @@
                                         </li>
                                         <li> gzip -d (Descompactar)</li>
                                         <li> Smit (Abre o painel de controle no AIX)</li>
-                                        <li>LSPV (Lista Discos Físicos) --> <a
-                                                href="img/comando_lspv_01.jpg">Exemplo</a></ap>
-                                        </li>
-                                        <li>LSLV (Lista Logical Volumes)</li>
-                                        <li>LSVG (Lista Volumes Group)</li>
                                         <li>cfgmgr - Dar refresh no rack para atualizar os discos</li>
                                         <li>chfs -a size=+1G (Adicionar + 1GB no filesystem)</li>
                                         <li>chfs -a size=30G (Defini para 30GB o filesystem)</li> 
@@ -159,6 +154,14 @@
                                         <li> mv (move)</li>
                                         <li>rm -f -rf * (-f para formçar e -rf para fazer recursivamente ) - Apagar diretorio e arquivos</li> 
 
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Listar Volumes</h5>
+                                    <ul>
+                                        <li>lspv (Lista Discos Físicos) --> <a href="img/comando_lspv_01.jpg">Exemplo</a></li>
+                                        <li>lslv (Lista Logical Volumes)</li>
+                                        <li>lsvg (Lista Volumes Group)</li>
+                                        <li>lsvg -l rootvg - lista logical volume</li>
+                                        <li>lsvg -l oravg - lista logical volume</li>
                                     </ul>
                                     <h5 class="text-center" style="font-weight: bold">Abrir o XClock</h5>
                                     <ul>
@@ -173,6 +176,14 @@
                                         <li>
                                             xclock
                                         </li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Tamanho das pastas e ordenação</h5>
+                                    <ul>
+                                        <li>du -g -s * - lista diretorios e tamanho das pastas                                   </li>
+                                        <li>du -g -s * | sort - lista e faz ordenação do primeiro campo como texto               </li>
+                                        <li>du -g -s * | sort -n  - lista e faz a ordenação do primeiro campo como numerico      </li>
+                                        <li>du -g -s * | sort -r - lista e ordena de forma desc                                  </li>
+                                        <li>du -g -s * | sort -rn - lista e ordena como primeiro campo numerico e desc           </li>
                                     </ul>
 
                                 </div>
@@ -345,6 +356,7 @@
                                     <h5 class="text-center" style="font-weight: bold">ExpDP</h5>
                                     <ul>
                                         <li><strong>Digitar no AIX:</strong> expdp directory=dumpdir dumpfile=expdp02.dmp logfile=log_expdp02.log exclude=statistics,table:\"IN \(\'EMP\',\'BONUS\'\)\"</li>
+                                        <li><strong>digitar no aix: </strong>expdp USUARIO@BD schemas=SCHMA1, SCHMA2, SCHMA3, SCHMA4,SCHMA5 directory=DUMPDIR2 EXCLUDE=STATISTICS dumpfile=FILENAME.dmp logfile=LOGNAME.log</li>
                                     </ul>
                                     <br>
                                     <br>
