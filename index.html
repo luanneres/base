@@ -277,10 +277,12 @@
                                         <li>GRANT CONNECT TO NOME_ROLE;</li>
                                         <li>GRANT CREATE SESSION TO NOME_ROLE;</li>
                                         <li>GRANT SELECT ANY TABLE TO NOME_ROLE;</li>
+                                        <li>GRANT FLASHBACK ON DBA_OBJECTS TO TESTE;</li>
                                         <li>CREATE USER NOME_USER IDENTIFIED BY SENHA;</li>
                                         <li>GRANT NOME_ROLE TO NOME_USER;</li>
                                         <li>ALTER USER USER_NAME IDENTIFIED BY "SENHA"</li>
                                         <li>REVOKE NOME_ROLE ON object FROM user;</li>
+
                                     </ul>
                                 </div>
                                 <div class="panel-footer"></div>
@@ -361,14 +363,26 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <strong><p class="text-center" style="color:red"> Ps: O EXPDP é mais rápido. Caso você não defina o diretório, ele pega o diretório padrão da tabela dba_directories</p></strong>
+                                    <div class="alert alert-danger" role="alert">
+                                        <p class="text-center" > Ps: O EXPDP é mais rápido. Caso você não defina o diretório, ele pega o diretório padrão da tabela dba_directories</p>
+                                      </div>
                                     <br>
                                     <br>
                                     <h3 style="margin-left: 24px;" class="text-center">Import</h3>
+                                    <h5 class="text-center" style="font-weight: bold">Import convencional</h5>
                                     <ul>
                                         <li>imp fromuser=scott touser=scott2  file=/u01/oradata/exports/export1.dmp log=/u01/oradata/exports/imp_scott1.log</li>
                                     </ul>
-                                    
+                                    <h5 class="text-center" style="font-weight: bold">ImpDP</h5>
+
+                                    <ul>
+                                        <li>impdp  DUMPFILE=nome_arquivo_exp.dmp logfile=nome_arquivo_log.log parfile=par_ctis.par (Usando parfile)</li>
+                                    </ul>
+                                    <ul>
+                                        <li>impdp DIRECTORY=dumpdir DUMPFILE=EXP_CTIS_20022020_2.DMP logfile=IMP_CTIS_20022020_RMP.log SCHEMAS=ctis</li>
+                                    </ul>
+
+                                    <a href="docs/Export-Import-Oracle-Luan.pdf" target="_blank" class="btn btn-primary btn-lg btn-block">Detalhes Export e Import DP <span class="glyphicon glyphicon-download-alt"></span></a>
                                 </div>
                                 <div class="panel-footer"></div>
                             </div>
@@ -612,7 +626,9 @@
     <script src="https://kit.fontawesome.com/f90636a10f.js" crossorigin="anonymous"></script>
 
     <style type="text/css">
-
+        body{
+            font-family: Verdana, Arial, Helvetica, sans-serif!important;
+        }
         .hljs {
           display: block;
           overflow-x: auto;
