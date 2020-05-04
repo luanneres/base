@@ -112,7 +112,7 @@
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <ul>
-                                        <li style="color:red">ps -ef | grep pmon (lista processos da maquina)</li>
+                                        <li style="color:red">ps -ef | grep pmon (lista processos da maquina)</li>                                        
                                         <li>. oraenv nomeInstancia (seta váriavel de ambiente)</li>
                                         <li>sqlplus / as sysdba</li>
                                         <li>scp *.rpm oracle@192.168.1.1:/u01/install (copiar do servidor atual para
@@ -154,6 +154,13 @@
                                         <li> mv (move)</li>
                                         <li>rm -f -rf * (-f para formçar e -rf para fazer recursivamente ) - Apagar diretorio e arquivos</li> 
 
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">NMON</h5>
+                                    <ul>
+                                        <li>p - Ver quantidade processador</li>
+                                        <li>c - Ver uso CPU</li>
+                                        <li>m - Ver uso de memória ram</li>
+                                        <li>m - Ver uso de disco</li>
                                     </ul>
                                     <h5 class="text-center" style="font-weight: bold">Listar Volumes</h5>
                                     <ul>
@@ -246,6 +253,12 @@
                                         <li> startup Mount (Inicia o banco em estado mount. Nesse estado você pode executar o alter database) </li>
                                         <li> Alter database open (Iniciar o banco quando ele estiver em estado Mount) </li>
                                         <li> Alter database noarchivelog (Alterar o banco para não criar archivelog) </li>
+                                        <li>show parameter processes (Verificar a o parametro proccesses)</li>
+                                        <li>show parameter sessions (Verificar o parametro sessions</li>
+                                        <li>ALTER SYSTEM SET PROCESSES=1000 SCOPE=SPFILE; (Alterar o parametro processes) - Necessário reiniciar a instância</li>
+                                        <li>ALTER SYSTEM SET SESSIONS=1000 SCOPE=SPFILE; (Alterar o parametro session) - Necessário reiniciar a instância </li>
+
+
                                     </ul>
                                 </div>
                                 <div class="panel-footer"></div>
