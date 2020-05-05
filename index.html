@@ -153,8 +153,14 @@
                                         <li>crontab -l (Lista as tarefas da máquina)</li>
                                         <li> cp (cópia)</li>
                                         <li> mv (move)</li>
-                                        <li>rm -f -rf * (-f para formçar e -rf para fazer recursivamente ) - Apagar diretorio e arquivos</li> 
-
+                                        <li>rm -f -rf * (-f para formçar e -rf para fazer recursivamente ) - Apagar diretorio e arquivos</li>
+                                    </ul>
+                                    <h5 class="text-center" style="font-weight: bold">Listar Discos</h5>
+                                    <ul>
+                                        <li>lsdev -Cc disk -F name | while read hdisk; do
+                                            echo ${hdisk},$(getconf DISK_SIZE /dev/${hdisk}),$(odmget -q "name=${hdisk} and attribute=unique_id" CuAt|grep value|cut -d '"' -f2)
+                                          done
+                                          </li>
                                     </ul>
                                     <h5 class="text-center" style="font-weight: bold">NMON</h5>
                                     <ul>
